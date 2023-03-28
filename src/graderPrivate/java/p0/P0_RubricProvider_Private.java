@@ -2,7 +2,7 @@ package p0;
 
 import org.sourcegrade.jagr.api.rubric.*;
 
-public class P0_RubricProvider implements RubricProvider {
+public class P0_RubricProvider_Private implements RubricProvider {
 
     private static final Criterion FIBONACCI_ITERATIVE_CRITERION = Criterion.builder()
         .shortDescription("Die Fibonacci-Zahlen werden in [[[IterativeFibonacciCalculator]]] korrekt berechnet.")
