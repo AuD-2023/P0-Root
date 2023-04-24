@@ -1,6 +1,11 @@
 package p0;
 
-import org.sourcegrade.jagr.api.rubric.*;
+import org.sourcegrade.jagr.api.rubric.Criterion;
+import org.sourcegrade.jagr.api.rubric.Grader;
+import org.sourcegrade.jagr.api.rubric.JUnitTestRef;
+import org.sourcegrade.jagr.api.rubric.Rubric;
+import org.sourcegrade.jagr.api.rubric.RubricProvider;
+import org.sourcegrade.jagr.api.testing.TestCycle;
 
 public class P0_RubricProvider_Private implements RubricProvider {
 
@@ -16,7 +21,7 @@ public class P0_RubricProvider_Private implements RubricProvider {
     private static final Criterion FIBONACCI_LOOPS_ONLY = Criterion.builder()
         .shortDescription("Methode [[[get(int)]]] in [[[IterativeFibonacciCalculator]]] ist rein iterativ implementiert.")
         .grader(Grader.testAwareBuilder()
-            .requirePass(JUnitTestRef.ofMethod(() -> IterativeFibonacciCalculatorTests.class.getDeclaredMethod("testStrictlyIterative")))
+            .requirePass(JUnitTestRef.ofMethod(() -> IterativeFibonacciCalculatorTests.class.getDeclaredMethod("testStrictlyIterative", TestCycle.class)))
             .pointsFailedMin()
             .pointsPassedMax()
             .build())
